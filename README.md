@@ -393,7 +393,11 @@ public class MenuController {
 
 
 - 우리가 ORM을 JPA, JDBC, Mybatis 등으로 변경해도 Transactional 어노테이션은 동일하게 사용 가능
-
+트랜잭션 계층은 각각의 TxManager(추상화 계층을) 통해 가져올 수 있는데,
+인터페이스인 PlatfromTransactionManager를 사용하면 사용하는 기술(JPA -> Mybatis)이 변경된다 하여도,
+비즈니스 로직의 변경점 없이 트랜잭션 정보를 가져올 수 있음
+*내용이 상당히 헷갈려 참고 사이트 첨부
+https://sabarada.tistory.com/127﻿
 ### AOP
 
 ```java
